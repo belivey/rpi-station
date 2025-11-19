@@ -17,10 +17,10 @@ try:
     tn = telnetlib.Telnet(host, port)
 
     if id != None:
-        command = "@" + id + " M0\r\n"
+        command = "@" + id + " M 0\r\n"
         tn.write(command.encode('ascii'))
     else:
-        tn.write("M0\r\n".encode('ascii'))
+        tn.write("M 0\r\n".encode('ascii'))
     time.sleep(3)
 
     data = tn.read_very_eager().decode('ascii')
